@@ -9,7 +9,7 @@ class PlayList:
 
     def __init__(self, playlist_id: str):
         self.playlist_id = playlist_id
-        self.playlist_info = Channel.get_service().playlists().list(id=self.__playlist_id,
+        self.playlist_info = Channel.get_service().playlists().list(id=self.playlist_id,
                                                                     part='snippet',
                                                                     ).execute()
         self.title = self.playlist_info['items'][0]['snippet']['title']
